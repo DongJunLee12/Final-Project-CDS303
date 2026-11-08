@@ -1,7 +1,7 @@
 Members
 DongHyeok Kim, DongJun Lee
 
-Overview
+## Overview
 We analyze listing-level Airbnb data from New York City to discover natural market segments among listings and to explain, in interpretable terms, what makes each segment distinct.
 
 This matters to real decision makers:
@@ -26,7 +26,34 @@ Key findings from our initial exploration:
 
 
 
+## Paper summary
 
+The paper introduces a four-step framework for performing explainable cluster analysis. 
+
+The main purpose is to find groups of similar observations in large datasets to understand which characteristics make each group unique.
+Clustering means that the data does not have predefined group labels, it does not automatically explain why observations belong to certain groups.
+The four step methodology in the paper is data preprocessing, dimensionality reduction, clustering, and classification.
+
+Data Preprocessing
+-Data preprocessing consists of handling missing values, detecting and removing outliers, preparing numerical and categorical variables, and scaling numerical variables.
+
+Dimensionality Reduction
+-Dimensionality reduction means to create smaller sets of variables to represent the data through the methods of SPCA and MCA each for numerical and categorical 
+values. This method helps in understanding which variables contribute to the resulting components.
+
+Clustering
+-Clustering is to find patterns and identify groups with similar characteristics and it is emphasized that different clustering algorithms will produce different results
+making it important to compare clustering.
+
+Classification
+-Classification is to find which variables are useful in predicting the cluster labels through methods like feature selection, hyperparameter optimization, cross-validation,
+and explainability methods to find which variables are important. The steps are important to distinguish one cluster from another.
+
+Why is it important?
+-Classification is important for explaining clusters because clustering does not use any predefined labels and classification uses those clusters by clustering to learn in 
+their model. The paper uses SHAP to measure importance to show which variables are most important for distinguishing clusters and contribute to predicting the cluster of a 
+particular observation. This is important because classification lets us fully explain which variables distinguish those groups by clustering. 
+Importantly, the cluster labels are used only as the target of the classification model and are never included as input features. Since the classifier largely reuses the same variables as the clustering stage, it characterizes and describes the clusters rather than independently validating them.
 
 
 
@@ -80,28 +107,4 @@ Excluded variables. Identifiers (id, host_id, host_profile_id, host_name, name),
 (4) Encoding: one-hot encode `room_type` and `neighbourhood_group` for the classification stage.
 (5) Correlation check: before dimensionality reduction, build a correlation matrix of the clustering inputs. PCA only helps when variables are linearly correlated, and this check will also settle the redundancy among the three review-count variables.
 
-The paper introduces a four-step framework for performing explainable cluster analysis. 
 
-The main purpose is to find groups of similar observations in large datasets to understand which characteristics make each group unique.
-Clustering means that the data does not have predefined group labels, it does not automatically explain why observations belong to certain groups.
-The four step methodology in the paper is data preprocessing, dimensionality reduction, clustering, and classification.
-
-Data Preprocessing
--Data preprocessing consists of handling missing values, detecting and removing outliers, preparing numerical and categorical variables, and scaling numerical variables.
-
-Dimensionality Reduction
--Dimensionality reduction means to create smaller sets of variables to represent the data through the methods of SPCA and MCA each for numerical and categorical 
-values. This method helps in understanding which variables contribute to the resulting components.
-
-Clustering
--Clustering is to find patterns and identify groups with similar characteristics and it is emphasized that different clustering algorithms will produce different results
-making it important to compare clustering.
-
-Classification
--Classification is to find which variables are useful in predicting the cluster labels through methods like feature selection, hyperparameter optimization, cross-validation,
-and explainability methods to find which variables are important. The steps are important to distinguish one cluster from another.
-
-Why is it important?
--Classification is important for explaining clusters because clustering does not use any predefined labels and classification uses those clusters by clustering to learn in 
-their model. The paper uses SHAP to measure importance to show which variables are most important for distinguishing clusters and contribute to predicting the cluster of a 
-particular observation. This is important because classification lets us fully explain which variables distinguish those groups by clustering. 
