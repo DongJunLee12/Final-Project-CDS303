@@ -91,15 +91,16 @@ Importantly, the cluster labels are used only as the target of the classificatio
 The selected clustering inputs (price, minimum_nights, reviews_per_month, number_of_reviews, calculated_host_listings_count, availability_365) each describe a different behavioral axis of a listing. 
 How much it charges, how it is allowed to be booked, how much demand it receives, who operates it, and how often it is available. All six are continuous variables, which keeps them compatible with PCA-based dimensionality reduction in the next stage. Segments defined along these axes correspond directly to the "market segments" in our research question (e.g., budget long-stay rooms vs. premium full-time entire homes vs. commercial multi-listing operations).
 
--**Identify candidate predictors for explaining the resulting clusters through classification.**
+- **Identify candidate predictors for explaining the resulting clusters through classification.**
 
-Candidate predictors for the classification stage. The clustering inputs themselves plus room_type and neighbourhood_group. Because the classifier reuses clustering variables, it characterizes the clusters rather than independently validating them; room_type and borough additionally let us describe clusters in terms a stakeholder recognizes ("private rooms in Brooklyn").
+The clustering inputs themselves plus room_type and neighbourhood_group serve as candidate predictors. Because the classifier reuses the clustering variables, it characterizes the clusters rather than independently validating them; room_type and borough additionally let us describe clusters in terms a stakeholder recognizes ("private rooms in Brooklyn").
 
--**Identify variables that should be excluded, such as identifiers or redundant variables.**
+- **Identify variables that should be excluded, such as identifiers or redundant variables.**
 
-Excluded variables. Identifiers (id, host_id, host_profile_id, host_name, name), high-cardinality or mostly-missing fields (neighbourhood as input, license), and raw dates (last_review). Cluster labels generated in Step 3 will be used only as the classification target, never as input features.
+We exclude identifiers (id, host_id, host_profile_id, host_name, name), high-cardinality or mostly-missing fields (neighbourhood as input, license), and raw dates (last_review). Cluster labels generated in Step 3 will be used only as the classification target, never as input features.
 
--**Note potential preparation needs, including missing values, scaling, and categorical encoding.**
+
+- **Note potential preparation needs, including missing values, scaling, and categorical encoding.**
 
 (1) Missing values: drop or impute `price` (about 35% missing; we will compare both strategies), and impute `reviews_per_month` with 0 for never-reviewed listings.
 (2) Outliers: cap extreme values of `minimum_nights` and `price` before clustering.
@@ -108,3 +109,12 @@ Excluded variables. Identifiers (id, host_id, host_profile_id, host_name, name),
 (5) Correlation check: before dimensionality reduction, build a correlation matrix of the clustering inputs. PCA only helps when variables are linearly correlated, and this check will also settle the redundancy among the three review-count variables.
 
 
+
+
+
+
+**3. NYC Demographic, Social, Economic, and Housing Profiles by Community District/PUMA (area-level context)**
+- Dataset title / provider / source: "Demographic, Social, Economic, and Housing Profiles by Community District/PUMA," NYC Department of City Planning, via NYC Open Data (https://data.cityofnewyork.us/City-Government/Demographic-Social-Economic-and-Housing-Profiles-b/kvuc-fg9b)
+- Relevant variables: population, household income, employment, and housing estimates from the Census Bureau's American Community Survey, aggregated by community district (PUMA)
+- Contribution: describes the kind of area each listing sits in (income level, residential character), which helps interpret location-driven clusters, for example whether premium segments concentrate in high-income districts. This perspective is directly relevant to our regulator stakeholder.
+- Connection to current data: area-level join through administrative units; each listing's borough/neighbourhood (or coordinates) can be assigned to a community district. Since district boundaries do not map one-to-one onto Airbnb neighbourhood names, if an exact crosswalk proves difficult, the profiles will be used as contextual information at the borough level instead.
