@@ -2,20 +2,26 @@ Members
 DongHyeok Kim, DongJun Lee
 
 Overview
-Overview of NYC listing of Airbnb for analysis
+We analyze listing-level Airbnb data from New York City to discover natural market segments among listings and to explain, in interpretable terms, what makes each segment distinct.
+
+This matters to real decision makers:
+- a new host deciding how to position and price a listing
+- city regulators who want to understand what kinds of short-term rental activity dominate the market
 
 Research Question
-What distinct segments of Airbnb listings can be identified in New York City based on their 
-pricing, booking, and review characteristics and which characteristics best explain each segment?
+What distinct segments of Airbnb listings can be identified in New York City based on their pricing, booking, and review characteristics, and which characteristics best explain each segment?
 
 Data description
-About one third of listings (9,903) have no price value, which will need handling before any price analysis.
-last_review and reviews_per_month are missing for the same 8,309 listings — these are listings with zero reviews.
-The median minimum stay is 30 nights, likely reflecting NYC's short-term rental regulations.
-Prices are heavily right-skewed (median $175 vs max $ 31,211), so the median is a better summary than mean.
-Name: Inside Airbnb – New York City Listings
+Name: Inside Airbnb – New York City Listings (September 14, 2026 snapshot)
 Source: Inside Airbnb (http://insideairbnb.com/get-the-data/)
+Size: 29,918 listings and 19 variables
+Unit of observation: one row = one Airbnb listing
 
+Key findings from our initial exploration:
+- About 35% of listings (10,512 out of 29,918) have no price value, which will need to be handled before any price analysis.
+- last_review and reviews_per_month are missing for the same 8,114 listings; these are listings with zero reviews.
+- The median minimum stay is 30 nights, which likely reflects NYC's short-term rental regulations.
+- Prices are heavily right-skewed (median $182 vs. max $31,538), so the median is a better summary than the mean.
 
 
 
