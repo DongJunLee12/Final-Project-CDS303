@@ -1,3 +1,5 @@
+# Explainable Cluster Analysis of NYC Airbnb Listings
+
 Members
 DongHyeok Kim, DongJun Lee
 
@@ -113,8 +115,22 @@ We exclude identifiers (id, host_id, host_profile_id, host_name, name), high-car
 
 
 
-**3. NYC Demographic, Social, Economic, and Housing Profiles by Community District/PUMA (area-level context)**
-- Dataset title / provider / source: "Demographic, Social, Economic, and Housing Profiles by Community District/PUMA," NYC Department of City Planning, via NYC Open Data (https://data.cityofnewyork.us/City-Government/Demographic-Social-Economic-and-Housing-Profiles-b/kvuc-fg9b)
-- Relevant variables: population, household income, employment, and housing estimates from the Census Bureau's American Community Survey, aggregated by community district (PUMA)
-- Contribution: describes the kind of area each listing sits in (income level, residential character), which helps interpret location-driven clusters, for example whether premium segments concentrate in high-income districts. This perspective is directly relevant to our regulator stakeholder.
-- Connection to current data: area-level join through administrative units; each listing's borough/neighbourhood (or coordinates) can be assigned to a community district. Since district boundaries do not map one-to-one onto Airbnb neighbourhood names, if an exact crosswalk proves difficult, the profiles will be used as contextual information at the borough level instead.
+## Supplementary Dataset
+
+https://data.cityofnewyork.us/City-Government/Demographic-Social-Economic-and-Housing-Profiles-b/kvuc-fg9b/about_data
+
+Demographic, Social, Economic, and Housing Profiles by Community District/PUMA, Data Provided By Department of City Planning (DCP) Population, household income, employment, housing characteristics are the variables we want to focus on for now possibly changing depending on future findings.
+We will be able to use this data to find which neighborhood one will be located to find characteristics by the variables given in this supplementary dataset
+The original dataset provides information about individual listings, including price, room type, availability, and location. The supplementary dataset adds 
+neighborhood-level information. By connecting our original data to their corresponding community districts or PUMAs using their geographic locations, 
+we can compare Airbnb clusters with neighborhood characteristics. This will help explain differences between groups of Airbnb listings.
+
+
+
+## Project Updates
+- Session 1 (Nov 8, 2026): Repository created; paper framework summarized; variable-selection table completed; supplementary datasets identified.
+- Session 2: (to be updated)
+- Session 3: (to be updated)
+- Final report & presentation: (to be updated)
+
+*Generative AI (Claude & Chat Gpt) was used to assist in structuring and drafting this page; all analytical decisions were reviewed by the team.*
