@@ -1,6 +1,6 @@
 # Explainable Cluster Analysis of NYC Airbnb Listings
 
-Members
+Members:
 DongHyeok Kim, DongJun Lee
 
 ## Overview
