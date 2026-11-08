@@ -15,3 +15,9 @@ The median minimum stay is 30 nights, likely reflecting NYC's short-term rental 
 Prices are heavily right-skewed (median $175 vs max $ 31,211), so the median is a better summary than mean.
 Name: Inside Airbnb – New York City Listings
 Source: Inside Airbnb (http://insideairbnb.com/get-the-data/)
+
+
+
+
+
+
