@@ -133,4 +133,4 @@ we can compare Airbnb clusters with neighborhood characteristics. This will help
 - Session 3: (to be updated)
 - Final report & presentation: (to be updated)
 
-*Generative AI (Claude & Chat Gpt) was used to assist in structuring and drafting this page; all analytical decisions were reviewed by the team.*
+*Generative AI (Claude & Chat Gpt) was used to assist in structuring and drafting this page(eg.creating Makrkdwontable) ; all analytical decisions were reviewed by the team.*
