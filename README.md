@@ -87,21 +87,21 @@ Clustering means that the data does not have predefined group labels, it does no
 The four step methodology in the paper is data preprocessing, dimensionality reduction, clustering, and classification.
 
 Data Preprocessing
-Data preprocessing consists of handling missing values, detecting and removing outliers, preparing numerical and categorical variables, and scaling numerical variables.
+-Data preprocessing consists of handling missing values, detecting and removing outliers, preparing numerical and categorical variables, and scaling numerical variables.
 
 Dimensionality Reduction
-Dimensionality reduction means to create smaller sets of variables to represent the data through the methods of SPCA and MCA each for numerical and categorical 
+-Dimensionality reduction means to create smaller sets of variables to represent the data through the methods of SPCA and MCA each for numerical and categorical 
 values. This method helps in understanding which variables contribute to the resulting components.
 
 Clustering
-Clustering is to find patterns and identify groups with similar characteristics and it is emphasized that different clustering algorithms will produce different results
+-Clustering is to find patterns and identify groups with similar characteristics and it is emphasized that different clustering algorithms will produce different results
 making it important to compare clustering.
 
 Classification
-Classification is to find which variables are useful in predicting the cluster labels through methods like feature selection, hyperparameter optimization, cross-validation,
+-Classification is to find which variables are useful in predicting the cluster labels through methods like feature selection, hyperparameter optimization, cross-validation,
 and explainability methods to find which variables are important. The steps are important to distinguish one cluster from another.
 
 Why is it important?
-Classification is important for explaining clusters because clustering does not use any predefined labels and classification uses those clusters by clustering to learn in 
+-Classification is important for explaining clusters because clustering does not use any predefined labels and classification uses those clusters by clustering to learn in 
 their model. The paper uses SHAP to measure importance to show which variables are most important for distinguishing clusters and contribute to predicting the cluster of a 
 particular observation. This is important because classification lets us fully explain which variables distinguish those groups by clustering. 
