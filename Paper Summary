@@ -1,0 +1,20 @@
+The paper introduces a four-step framework for performing explainable cluster analysis. 
+
+The main purpose is to find groups of similar observations in large datasets to understand which characteristics make each group unique.
+Clustering means that the data does not have predefined group labels, it does not automatically explain why observations belong to certain groups.
+The four step methodology in the paper is data preprocessing, dimensionality reduction, clustering, and classification.
+
+Data preprocessing consists of handling missing values, detecting and removing outliers, preparing numerical and categorical variables, and scaling numerical variables.
+
+Dimensionality reduction means to create smaller sets of variables to represent the data through the methods of SPCA and MCA each for numerical and categorical 
+values. This method helps in understanding which variables contribute to the resulting components.
+
+Clustering is to find patterns and identify groups with similar characteristics and it is emphasized that different clustering algorithms will produce different results
+making it important to compare clustering.
+
+Classification is to find which variables are useful in predicting the cluster labels through methods like feature selection, hyperparameter optimization, cross-validation,
+and explainability methods to find which variables are important. The steps are important to distinguish one cluster from another.
+
+Classification is important for explaining clusters because clustering does not use any predefined labels and classification uses those clusters by clustering to learn in 
+their model. The paper uses SHAP to measure importance to show which variables are most important for distinguishing clusters and contribute to predicting the cluster of a 
+particular observation. This is important because classification lets us fully explain which variables distinguish those groups by clustering. 
