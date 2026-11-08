@@ -51,3 +51,25 @@ Source: Inside Airbnb (http://insideairbnb.com/get-the-data/)
 | number_of_reviews_ltm | Reviews in last 12 months | Numerical | Candidate / redundancy check | Overlaps with reviews_per_month; keep only if correlation analysis shows added information. |
 | license | NYC registration/license number | Categorical | Exclude (possible derived flag) | About 83% missing; raw values unusable. A binary "has license" flag may serve as a contextual variable for regulation-related interpretation. |
 
+
+
+- **Explain how the selected clustering variables relate to your research question.**
+
+The selected clustering inputs (price, minimum_nights, reviews_per_month, number_of_reviews, calculated_host_listings_count, availability_365) each describe a different behavioral axis of a listing. 
+How much it charges, how it is allowed to be booked, how much demand it receives, who operates it, and how often it is available. All six are continuous variables, which keeps them compatible with PCA-based dimensionality reduction in the next stage. Segments defined along these axes correspond directly to the "market segments" in our research question (e.g., budget long-stay rooms vs. premium full-time entire homes vs. commercial multi-listing operations).
+
+-**Identify candidate predictors for explaining the resulting clusters through classification.**
+
+Candidate predictors for the classification stage. The clustering inputs themselves plus room_type and neighbourhood_group. Because the classifier reuses clustering variables, it characterizes the clusters rather than independently validating them; room_type and borough additionally let us describe clusters in terms a stakeholder recognizes ("private rooms in Brooklyn").
+
+-**Identify variables that should be excluded, such as identifiers or redundant variables.**
+
+Excluded variables. Identifiers (id, host_id, host_profile_id, host_name, name), high-cardinality or mostly-missing fields (neighbourhood as input, license), and raw dates (last_review). Cluster labels generated in Step 3 will be used only as the classification target, never as input features.
+
+-**Note potential preparation needs, including missing values, scaling, and categorical encoding.**
+
+(1) Missing values: drop or impute `price` (about 35% missing; we will compare both strategies), and impute `reviews_per_month` with 0 for never-reviewed listings.
+(2) Outliers: cap extreme values of `minimum_nights` and `price` before clustering.
+(3) Scaling: log-transform heavily skewed variables, then standardize all clustering inputs. Scaling is mandatory before distance-based clustering and PCA.
+(4) Encoding: one-hot encode `room_type` and `neighbourhood_group` for the classification stage.
+(5) Correlation check: before dimensionality reduction, build a correlation matrix of the clustering inputs. PCA only helps when variables are linearly correlated, and this check will also settle the redundancy among the three review-count variables.
