@@ -10,6 +10,15 @@ This matters to real decision makers:
 - a new host deciding how to position and price a listing
 - city regulators who want to understand what kinds of short-term rental activity dominate the market
 
+## Project stages
+
+| Stage | Report | Notebook |
+|---|---|---|
+| Project 1: paper summary, variable selection, supplementary dataset | this page | [Project0_Airbnb (1) (1).ipynb](Project0_Airbnb%20(1)%20(1).ipynb) |
+| Project 2: data integration, research question refinement, PCA | [Project2.md](Project2.md) | [Project2_Integration_PCA.ipynb](Project2_Integration_PCA.ipynb) (data integration), [Project2.ipynb](Project2.ipynb) (PCA) |
+
+Data files: [data/](data/). Data sources and access instructions: [Project2.md, sections 2 and 5](Project2.md).
+
 Research Question
 What distinct segments of Airbnb listings can be identified in New York City based on their pricing, booking, and review characteristics, and which characteristics best explain each segment?
 
@@ -125,12 +134,15 @@ The original dataset provides information about individual listings, including p
 neighborhood-level information. By connecting our original data to their corresponding community districts or PUMAs using their geographic locations, 
 we can compare Airbnb clusters with neighborhood characteristics. This will help explain differences between groups of Airbnb listings.
 
+**Update (Project 2).** The file above contained only a data dictionary and no downloadable data. We therefore used the NTA-level files of the same ACS profiles from the NYC Department of City Planning (2020-2024 ACS 5-year estimates, Economic and Housing files): https://www.nyc.gov/content/planning/pages/resources#datasets. Details are in [Project2.md](Project2.md).
+
+
 
 
 ## Project Updates
 - Session 1 (Nov 8, 2026): Repository created; paper framework summarized; variable-selection table completed; supplementary datasets identified.
-- Session 2: (to be updated)
+- Session 2 (Nov 22, 2026): Merged listings with ACS neighborhood data (19,331 listings in 195 NTAs); refined the research question and audience; ran PCA on 14 variables and retained 7 components. See [Project2.md](Project2.md).
 - Session 3: (to be updated)
 - Final report & presentation: (to be updated)
 
-*Generative AI (Claude & Chat Gpt) was used to assist in structuring and drafting this page(eg.creating Makrkdwontable) ; all analytical decisions were reviewed by the team.*
+*Generative AI (Claude & ChatGPT) was used to assist in structuring and drafting these pages (e.g., creating Markdown tables) and in writing and debugging code for Project 2; all analytical decisions were reviewed by the team.*
