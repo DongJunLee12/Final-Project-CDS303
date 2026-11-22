@@ -1,0 +1,20 @@
+We believe that the primary audience for this research will be the people who actually use Airbnb, meaning guests choosing where to book and 
+hosts deciding how to price and list a property. Buyers can use the neighborhood-level comparison to see whether a listing's price is typical for its area
+and what kind of neighborhood it sits in. Owners can use it to see how their price, minimum stay and availability compare with others in their neighborhood.
+
+We also believe the findings could reach tenant advocacy groups, especially government-affiliated offices that provide support and legal assistance 
+in housing disputes, such as NYC's Office to Protect Tenants. These offices work with residents of neighborhoods where short-term rentals may compete with 
+long-term housing. A neighborhood-level view of where commercial-style listings cluster could help them decide where to focus outreach.
+
+Relevance
+Users: Prices vary widely (median $183, but a maximum of $31,538), so a single average tells a guest little. 
+Users need to know what is typical for a specific neighborhood and how that relates to its income and rent level.
+Advocacy offices: They need to see whether listings run by hosts with many properties and open most of the year concentrate in neighborhoods where residents 
+are already rent-burdened. Our data connects each listing to its neighborhood's rent burden, poverty and median rent, which makes that comparison possible.
+Potential use
+For users: compare a listing's price, minimum stay and availability with the neighborhood norm, adjusted for neighborhood income and rent. 
+This could support a booking or pricing decision.
+For advocacy offices: rank neighborhoods by the share of listings from multi-listing hosts and see whether the top ones are also high in rent burden. 
+That gives them a list of neighborhoods where outreach is most likely to matter.
+Further investigation: test the pattern with regression or neighborhood clustering, then check flagged areas against housing-dispute or rent records.
+Limit: the data shows association, not cause. It cannot show that Airbnb activity raises rents or leads to disputes.
