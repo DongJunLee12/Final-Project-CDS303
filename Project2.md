@@ -127,3 +127,5 @@ PCA identifies directions of variation, not clusters. Denser areas in the plot a
 
 Required packages: `numpy`, `pandas`, `openpyxl`, `matplotlib`, `seaborn`, `scikit-learn`.
 
+Generative AI (Claude) was used to help write and debug the code and to help draft this report. The team reviewed the code, the results and the text.
+
